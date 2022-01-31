@@ -13,7 +13,10 @@ function mostrar()
 
 	//alert("texto literal") todo lo que ponemos entre comillas sale literal en el mensaje de alerta
 	//alert(person) ejemplo de salida de la variable anterior
-	alert("su nombre es "+ nombreIngresado); // se agrega espacio entre las comillas para que al concatenar no salga todo junto.
+	alert("su nombre es "+ nombreIngresado); 
+	/* se agrega espacio entre las comillas para que al concatenar no salga todo junto.
+	se agrega el + para concatenar variables, en este caso un texto literal y una variable
+	tengo que recordar de agregar siempre el punto y coma al terminar el código*/
 	//alert(nombreIngresado)
 }
 
