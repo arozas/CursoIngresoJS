@@ -6,6 +6,9 @@ y lo muestro por 'ID' al presionar el botón 'mostrar'
 */
 function mostrar()
 {
-	alert("ok");
+	let nombreIngresado;
+	nombreIngresado = prompt("Por favor ingrese su nombre", "Fulano");
+	document.getElementById('txtIdNombre').value=nombreIngresado; 
+	//ahora el cuadro de texto muestra la variable del prompt, donde cargamos el dato.
 }
 
