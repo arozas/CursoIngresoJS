@@ -7,55 +7,57 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	var X,Y,suma;
+	let X,Y,suma;
 
-	X=document.getElementById('txtIdNumeroUno').value;
-	
-	Y=document.getElementById('txtIdNumeroDos').value;
+	X=parseInt(document.getElementById('txtIdNumeroUno').value);
 
-	suma=parseInt(X)+parseInt(Y);
+	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+
+	suma=X+Y;
 	
-	alert("el resultado es "+ suma);
+	alert("La suma es "+ suma);
 }
 
 function restar()
 {
-	var X,Y,resta;
+	let X,Y,resta;
 
-	X=document.getElementById('txtIdNumeroUno').value;
-	
-	Y=document.getElementById('txtIdNumeroDos').value;
+	X=parseInt(document.getElementById('txtIdNumeroUno').value);
 
-	resta=parseInt(X)-parseInt(Y);
+	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+
+	resta=X-Y;
 	
-	alert("el resultado es "+ resta);
+	alert("La resta es "+ resta);
 }
 
 function multiplicar()
 { 
-	var X,Y,multiplicacion;
+	let X,Y,multiplicacion;
 
-	X=document.getElementById('txtIdNumeroUno').value;
-	
-	Y=document.getElementById('txtIdNumeroDos').value;
+	X=parseInt(document.getElementById('txtIdNumeroUno').value);
 
-	multiplicacion=parseInt(X)*parseInt(Y);
+	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+
+	multiplicacion=X*Y;
 	
-	alert("el resultado es "+ multiplicacion);
+	alert("La multiplicación es "+ multiplicacion);
 }
 
 function dividir()
 {
-	var X,Y,division;
+	let X,Y,division;
 
-	X=document.getElementById('txtIdNumeroUno').value;
-	
-	Y=document.getElementById('txtIdNumeroDos').value;
+	X=parseInt(document.getElementById('txtIdNumeroUno').value);
 
-	division=parseInt(X)/parseInt(Y);
+	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+
+	division=X/Y;
 	
-	alert("el resultado es "+ division);
+	alert("La división es "+ division);
 }
 
 /* Me adelante despues de resolver el ejercicio anterior, lo que hice es copiar y pegar el código
 cambiando solamente una variable. Puede que este haciendo algo mal, pero estoy esperimentando.
+Hice correcciones sobre la sintaxis y adecue al enunciado.
+*/

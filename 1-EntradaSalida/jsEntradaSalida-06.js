@@ -31,6 +31,9 @@ function sumar()
 	Esta mal, ya que estoy definiendo variables dentro del bloque y eso se hace con la keyword let
 	var = variable dentro de la función
 	let = variable dentro del bloque
+	Acontinuación defíno 3 sintaxis de programación que funcionan, 
+	¿Cual sigue una buena practica de desarrollo?
+	¿Es indistinto la forma en que se definen las variables?
 	*/
 	//Corregido:
 	//Primera forma:
