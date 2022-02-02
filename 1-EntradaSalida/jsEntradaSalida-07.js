@@ -7,54 +7,70 @@ mostrar el resulto por medio de "ALERT"
 ej.: "la Resta es 750"*/ 
 function sumar()
 {	
-	let X,Y,suma;
+	let numeroUno;
+	let numeroDos;
+	let suma;
 
-	X=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroUno=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroDos=parseInt(document.getElementById('txtIdNumeroDos').value);
 
-	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+	numeroUno=parseInt(numeroUno);
+	numeroDos=parseInt(numeroDos);
 
-	suma=X+Y;
+	suma=numeroUno+numeroDos;
 	
 	alert("La suma es "+ suma);
 }
 
 function restar()
 {
-	let X,Y,resta;
+	let numeroUno;
+	let numeroDos;
+	let restar;
 
-	X=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroUno=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroDos=parseInt(document.getElementById('txtIdNumeroDos').value);
 
-	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+	numeroUno=parseInt(numeroUno);
+	numeroDos=parseInt(numeroDos);
 
-	resta=X-Y;
+	restar=numeroUno-numeroDos;
 	
-	alert("La resta es "+ resta);
+	alert("La resta es "+ restar);
 }
 
 function multiplicar()
 { 
-	let X,Y,multiplicacion;
+	let numeroUno;
+	let numeroDos;
+	let multiplicar;
 
-	X=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroUno=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroDos=parseInt(document.getElementById('txtIdNumeroDos').value);
 
-	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+	numeroUno=parseInt(numeroUno);
+	numeroDos=parseInt(numeroDos);
 
-	multiplicacion=X*Y;
+	multiplicar=numeroUno*numeroDos;
 	
-	alert("La multiplicación es "+ multiplicacion);
+	alert("La multiplicación es "+ multiplicar);
 }
 
 function dividir()
 {
-	let X,Y,division;
+	let numeroUno;
+	let numeroDos;
+	let dividir;
 
-	X=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroUno=parseInt(document.getElementById('txtIdNumeroUno').value);
+	numeroDos=parseInt(document.getElementById('txtIdNumeroDos').value);
 
-	Y=parseInt(document.getElementById('txtIdNumeroDos').value);
+	numeroUno=parseInt(numeroUno);
+	numeroDos=parseInt(numeroDos);
 
-	division=X/Y;
+	dividir=numeroUno/numeroDos;
 	
-	alert("La división es "+ division);
+	alert("La división es "+ dividir);
 }
 
 /* Me adelante despues de resolver el ejercicio anterior, lo que hice es copiar y pegar el código

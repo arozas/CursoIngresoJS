@@ -8,7 +8,7 @@ function mostrar()
 {
 	let nombreIngresado;
 	nombreIngresado = prompt("Por favor ingrese su nombre", "Fulano");
-	document.getElementById('txtIdNombre').value=nombreIngresado; 
+	document.getElementById('txtIdNombre').value="Su nombre es "+nombreIngresado; 
 	//ahora el cuadro de texto muestra la variable del prompt, donde cargamos el dato.
 }
 

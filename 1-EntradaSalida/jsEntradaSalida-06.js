@@ -6,6 +6,19 @@ transformarlos a enteros (parseInt) y Sumarlos.
 mostrar el resulto por medio de "ALERT"*/
 function sumar()
 {
+	let numeroUno;
+	let numeroDos;
+	let suma;
+	
+	numeroUno=document.getElementById('txtIdNumeroUno').value;
+	numeroDos=document.getElementById('txtIdNumeroDos').value;
+	
+	numeroUno=parseInt(numeroUno);//Esta es la forma correcta de usar el parseInt
+	numeroDos=parseInt(numeroDos);// Esta la forma correcta de usar el parseInt
+	
+	suma=numeroUno+numeroDos;
+
+	alert("La suma es " +suma);
 	/*
 	Toda la sintaxis esta mal
 	var numeroY;
@@ -37,19 +50,9 @@ function sumar()
 	*/
 	//Corregido:
 	//Primera forma:
-	/*
-	let numeroY;
-	let numeroX;
-	let suma;
-	
-	numeroY=parseInt(document.getElementById('txtIdNumeroUno').value);
-	
-	numeroX=parseInt(document.getElementById('txtIdNumeroDos').value);
 
-	suma=numeroY+numeroX;
-
-	alert("el resultado es "+ suma);
-	*/
+	//alert(parseInt(document.getElementById('txtIdNumeroUno').value)+parseInt(document.getElementById('txtIdNumeroDos').value));
+	//ahorrarse codigo es un mala practica, en la carrera me voy ahorrar nota, esta forma no comentada es la correcta.
 	//Segunda forma:
 	/*
 	let numeroY;
@@ -63,7 +66,7 @@ function sumar()
 
 	alert("el resultado es "+ suma);
 	*/
-	// Tercer Forma:
+	/*/ Tercer Forma: MAL NO HAY QUE AHORRARSE CÓDIGO
 	let numeroY, numeroX, suma;
 	
 	numeroY=parseInt(document.getElementById('txtIdNumeroUno').value);
@@ -72,6 +75,5 @@ function sumar()
 
 	suma=numeroY+numeroX;
 
-	alert("el resultado es "+ suma);
+	alert("el resultado es "+ suma);*/
 }
-

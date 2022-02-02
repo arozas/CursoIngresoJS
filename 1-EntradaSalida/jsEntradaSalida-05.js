@@ -5,18 +5,6 @@ Debemos lograr tomar nombre y edad por ID y mostrarlos concatenados
 ej.: "Usted se llama José y tiene 66 años" 	*/
 function mostrar()
 {	
-	/*
-	var nombreIngresado; MAL
-	nombreIngresado=document.getElementById('txtIdNombre').value;	
-	
-	var edadIngresada; MAL
-	edadIngresada=document.getElementById('txtIdEdad').value;
-	
-	Esta mal, ya que estoy definiendo variables dentro del bloque y eso se hace con la keyword let
-	var = variable dentro de la función
-	let = variable dentro del bloque
-	*/
-
 	let nombreIngresado;
 	nombreIngresado=document.getElementById('txtIdNombre').value;	
 	
@@ -24,9 +12,17 @@ function mostrar()
 	edadIngresada=document.getElementById('txtIdEdad').value;
 	
 	alert("Usted se llama "+ nombreIngresado +" y tiene "+ edadIngresada +" años" );
-
 }
 /*
+var nombreIngresado; MAL
+nombreIngresado=document.getElementById('txtIdNombre').value;	
+	
+var edadIngresada; MAL
+edadIngresada=document.getElementById('txtIdEdad').value;
+	
+Esta mal, ya que estoy definiendo variables dentro del bloque y eso se hace con la keyword let
+var = variable dentro de la función
+let = variable dentro del bloque
 
 Recordad que el ingresos o salidas por ID es por medio de 
 document.getElementByID no por prompt.
