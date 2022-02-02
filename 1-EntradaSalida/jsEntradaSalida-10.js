@@ -13,11 +13,9 @@ function mostrarAumento()
 	let precioDescuento;
 
 	importe=document.getElementById('txtIdImporte').value;
-
-	importe=parseInt(importe);
-
 	descuento=prompt("Ingrese el descuento", "10");
-
+	
+	importe=parseInt(importe);
 	descuento=parseInt(descuento);
 
 	resultado=importe*descuento/100;
