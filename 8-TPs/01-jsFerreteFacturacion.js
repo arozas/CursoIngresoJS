@@ -1,11 +1,15 @@
-/*1. Para el departamento de facturación:
+/*
+Alejandro Alberto Martín Rozas
+DIV J
+TP01
+1. Para el departamento de facturación:
 A.	Ingresar tres precios de productos y mostrar la suma de los mismos.
 B.	Ingresar tres precios de productos y mostrar el promedio de los mismos.
 C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
 {
-    let precioUno;
+	let precioUno;
     let precioDos;
     let precioTres;
     let suma;
@@ -20,11 +24,11 @@ function Sumar ()
 
     suma=precioUno+precioDos+precioTres;
 
-    alert("El total es "+ suma);
+    alert("El total de los tres productos es $"+suma);
 }
 function Promedio () 
 {
-	let precioUno;
+    let precioUno;
     let precioDos;
     let precioTres;
     let promedio;
@@ -37,29 +41,35 @@ function Promedio ()
     precioDos=parseInt(precioDos);
     precioTres=parseInt(precioTres);
 
-    promedio=(precioUno+precioDos+precioTres)/3;
+    promedio=(precioUno+precioDos+precioTres)/3
 
-    alert("El promedio es "+ promedio);
+    alert("El promedio de los tres productos es $"+promedio);
 }
 function PrecioFinal () 
 {
 	let precioUno;
     let precioDos;
     let precioTres;
-    let iva;
+    let impuestoIVA;
+    let precioparcial;
+    let calculoIVA;
     let precioFinal;
 
     precioUno=document.getElementById('txtIdPrecioUno').value;
     precioDos=document.getElementById('txtIdPrecioDos').value;
     precioTres=document.getElementById('txtIdPrecioTres').value;
+    impuestoIVA=21;
 
     precioUno=parseInt(precioUno);
     precioDos=parseInt(precioDos);
     precioTres=parseInt(precioTres);
+    impuestoIVA=parseInt(impuestoIVA);
 
-    iva=(precioUno+precioDos+precioTres)*21/100;
+    precioparcial=precioUno+precioDos+precioTres;
 
-    precioFinal=precioUno+precioDos+precioTres+iva;
+    calculoIVA=(precioparcial*impuestoIVA)/100;
 
-    alert("El total + el IVA es "+precioFinal);
+    precioFinal=precioparcial+calculoIVA;
+
+    alert("El precio final con IVA es $"+precioFinal);
 }
