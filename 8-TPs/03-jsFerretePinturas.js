@@ -12,19 +12,19 @@ function FahrenheitCentigrados () //(32°F − 32) × 5/9 = 0°C
     let variableConversionDecimal;
     let variableConversionEntera;
     let formulaCentigrados;
+    let mensajeAlert;
 
     temperaturaFahrenheit=document.getElementById('txtIdTemperatura').value;
     variableConversionEntera=32;
     variableConversionDecimal=5/9;
 
     temperaturaFahrenheit=parseInt(temperaturaFahrenheit);
-    variableConversionEntera=parseInt(variableConversionEntera);
-    variableConversionDecimal=parseFloat(variableConversionDecimal);
 
     formulaCentigrados=(temperaturaFahrenheit-variableConversionEntera)*variableConversionDecimal;
 
-    alert(temperaturaFahrenheit+"° Fahrenheit son "+formulaCentigrados+"° Centigrados");
+    mensajeAlert=temperaturaFahrenheit+"° Fahrenheit son "+formulaCentigrados.toFixed(2)+"° Centigrados";
 
+    alert(mensajeAlert);
 }
 
 function CentigradosFahrenheit () //(0°C × 9/5) + 32 = 32°F
@@ -33,16 +33,17 @@ function CentigradosFahrenheit () //(0°C × 9/5) + 32 = 32°F
     let variableConversionDecimal;
     let variableConversionEntera;
     let formulaFahrenheit;
+    let mensajeAlert;
 
     temperaturaCentigrados=document.getElementById('txtIdTemperatura').value;
     variableConversionDecimal=9/5; //1.8
     variableConversionEntera=32
 
     temperaturaCentigrados=parseInt(temperaturaCentigrados);
-    variableConversionDecimal=parseFloat(variableConversionDecimal);
-    variableConversionEntera=parseInt(variableConversionEntera)
 
     formulaFahrenheit=(temperaturaCentigrados*variableConversionDecimal)+variableConversionEntera;
 
-    alert(temperaturaCentigrados+"° Centígrados son "+formulaFahrenheit+"° Fahrenheit");
+    mensajeAlert=temperaturaCentigrados+"° Centígrados son "+formulaFahrenheit.toFixed(2)+"° Fahrenheit";
+
+    alert(mensajeAlert);
 }

@@ -15,6 +15,7 @@ function Rectangulo ()
     let cantidadHiloAlambre;
     let perimetroRectangulo;
     let materialNecesario;
+    let mensajeAlert;
 
     largoRectangulo=document.getElementById('txtIdLargo').value;
     anchoRectangulo=document.getElementById('txtIdAncho').value;
@@ -22,36 +23,35 @@ function Rectangulo ()
 
     largoRectangulo=parseInt(largoRectangulo);
     anchoRectangulo=parseInt(anchoRectangulo);
-    cantidadHiloAlambre=parseInt(cantidadHiloAlambre);
 
-    perimetroRectangulo=(largoRectangulo*2)+(anchoRectangulo*2);
+    perimetroRectangulo=2*(largoRectangulo+anchoRectangulo);
 
     materialNecesario=perimetroRectangulo*cantidadHiloAlambre;
 
-    alert("Se necesita comprar "+materialNecesario+" metros del alambre");
+    mensajeAlert="Se necesita comprar "+materialNecesario+" unidades de alambre";
+    
+    alert(mensajeAlert);
 }
 function Circulo () 
 {
     let radioCirculo;
     let cantidadHiloAlambre;
-    let numeroPi;
     let perimetroCirculo; //L = 2 · π · r
     let materialNecesario;
+    let mensajeAlert;
 
     radioCirculo=document.getElementById('txtIdRadio').value;
     cantidadHiloAlambre=3;
-    numeroPi=3.14;
    
     radioCirculo=parseInt(radioCirculo);
-    cantidadHiloAlambre=parseInt(cantidadHiloAlambre);
-    //numeroPi=parseInt(numeroPi); //no se puede calcular el radio con parseInt, por que lo traforma a entero
-    numeroPi=parseFloat(numeroPi); //uso el parseFloat por que Pi es un numero decimal
 
-    perimetroCirculo=2*numeroPi*radioCirculo;
+    perimetroCirculo=2*Math.PI*radioCirculo;
 
     materialNecesario=perimetroCirculo*cantidadHiloAlambre;
 
-    alert("Se necesita comprar "+materialNecesario+" metros del alambre");
+    mensajeAlert="Se necesita comprar "+materialNecesario.toFixed(2)+" unidades de alambre";
+    //usar .toFixed para definir la cantidad de decimales a mostrar sin modificar el valor de la variable.
+    alert(mensajeAlert);
 }
 function Materiales () 
 {
@@ -62,16 +62,15 @@ function Materiales ()
     let areaRectangulo; //ÁREA = BASE X ALTURA (Largo x Ancho)
     let cantidadCemento;
     let cantidadCal;
+    let mensajeAlert;
 
     largoRectangulo=document.getElementById('txtIdLargo').value;
     anchoRectangulo=document.getElementById('txtIdAncho').value;
     bolsasCemento=2;
     bolsasCal=3;
 
-    largoRectangulo=parseInt(largoRectangulo);
+    largoRectangulo=parseInt(largoRectangulo); //Solo para cadenas o entradas de datos usar el parseInt
     anchoRectangulo=parseInt(anchoRectangulo);
-    bolsasCemento=parseInt(bolsasCemento);
-    bolsasCal=parseInt(bolsasCal);
 
     areaRectangulo=largoRectangulo*anchoRectangulo;
 
@@ -79,5 +78,7 @@ function Materiales ()
 
     cantidadCal=areaRectangulo*bolsasCal;
 
-    alert("Se necesita comprar "+cantidadCemento+" bolsas de cemento y "+cantidadCal+" bolsas de cal");	
+    mensajeAlert="Se necesita comprar "+cantidadCemento+" bolsas de cemento y "+cantidadCal+" bolsas de cal";
+
+    alert(mensajeAlert);	
 }
