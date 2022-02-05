@@ -13,6 +13,7 @@ function Sumar ()
     let precioDos;
     let precioTres;
     let suma;
+    let mensajeAlert;
 
     precioUno=document.getElementById('txtIdPrecioUno').value;
     precioDos=document.getElementById('txtIdPrecioDos').value;
@@ -24,7 +25,9 @@ function Sumar ()
 
     suma=precioUno+precioDos+precioTres;
 
-    alert("El total de los tres productos es $"+suma);
+    mensajeAlert="El total de los tres productos es $"+suma;
+
+    alert(mensajeAlert);
 }
 function Promedio () 
 {
@@ -32,6 +35,7 @@ function Promedio ()
     let precioDos;
     let precioTres;
     let promedio;
+    let mensajeAlert;
 
     precioUno=document.getElementById('txtIdPrecioUno').value;
     precioDos=document.getElementById('txtIdPrecioDos').value;
@@ -43,22 +47,23 @@ function Promedio ()
 
     promedio=(precioUno+precioDos+precioTres)/3;
 
-    alert("El promedio de los tres productos es $"+promedio);
+    mensajeAlert="El promedio de los tres productos es $"+promedio;
+
+    alert(mensajeAlert);
 }
 function PrecioFinal () 
 {
 	let precioUno;
     let precioDos;
     let precioTres;
-    let impuestoIVA;
     let precioparcial;
     let calculoIVA;
     let precioFinal;
+    let mensajeAlert;
 
     precioUno=document.getElementById('txtIdPrecioUno').value;
     precioDos=document.getElementById('txtIdPrecioDos').value;
     precioTres=document.getElementById('txtIdPrecioTres').value;
-    impuestoIVA=21; //La variable no es de entrada ni string, asi que no se parsea
 
     precioUno=parseInt(precioUno);
     precioDos=parseInt(precioDos);
@@ -66,9 +71,11 @@ function PrecioFinal ()
 
     precioparcial=precioUno+precioDos+precioTres;
 
-    calculoIVA=(precioparcial*impuestoIVA)/100;
+    calculoIVA=(precioparcial*21)/100;
 
     precioFinal=precioparcial+calculoIVA;
 
-    alert("El precio final con IVA es $"+precioFinal);
+    mensajeAlert="El precio final con IVA es $"+precioFinal.toFixed(2);
+
+    alert(mensajeAlert);
 }

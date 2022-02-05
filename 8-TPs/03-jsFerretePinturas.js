@@ -24,6 +24,11 @@ function FahrenheitCentigrados () //(32°F − 32) × 5/9 = 0°C
 
     mensajeAlert=temperaturaFahrenheit+"° Fahrenheit son "+formulaCentigrados.toFixed(2)+"° Centigrados";
 
+    /*toFixed se puede aplicar a una variable igualando:
+    formulaCentigrado=formulaCentigrado.toFixed(2)
+    al igualar la variable cambia el valor de la variable y se pierde presición
+    */
+   
     alert(mensajeAlert);
 }
 
