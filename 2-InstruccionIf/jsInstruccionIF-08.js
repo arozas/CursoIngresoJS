@@ -1,6 +1,6 @@
 /*Alejandro Alberto Martín Rozas
 Div J
-ejercicio IF058
+ejercicio IF08
 */
 function mostrar()
 {
@@ -14,9 +14,9 @@ edadIngresada=parseInt(edadIngresada);
 
 if (edadIngresada>18)
 {
-	if (estadoCivil="Soltero")
+	if (estadoCivil=="Soltero")
 	{
-		alert("Es soltero y no es menor")
+		alert("Es soltero y no es menor");
 	}
 }
 }//FIN DE LA FUNCIÓN

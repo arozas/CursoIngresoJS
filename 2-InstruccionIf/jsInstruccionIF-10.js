@@ -9,12 +9,30 @@ Al presionar el Botón, asignar una nota RANDOM al examen y mostrar:
 function mostrar()
 {
 	let numeroRandom;
+	let mensajeAlert;
 
 	numeroRandom=(Math.random()*10)+1;
 
 	numeroRandom=parseInt(numeroRandom);
 
-		if (numeroRandom==9 || numeroRandom==10)
+	if (numeroRandom>8)
+	{
+		mensajeAlert="Tu nota es "+numeroRandom+" ¡EXCELENTE!";
+	}
+	else
+	{
+		if (numeroRandom<4)
+		{
+			mensajeAlert="Tu nota es "+numeroRandom+" ¡Vamos, la proxima se puede!";
+		}
+		else
+		{
+			mensajeAlert="Tu nota es "+numeroRandom+" ¡APROBÓ!";
+		}
+	}
+	alert(mensajeAlert);
+	/*
+	if (numeroRandom>8)
 	{
 		alert("Tu nota es "+numeroRandom+" ¡EXCELENTE!");
 	}
@@ -29,7 +47,7 @@ function mostrar()
 			alert("Tu nota es "+numeroRandom+" ¡APROBÓ!");
 		}
 	}
-	/*Esta mal, la comprovación en notas mayores de 9 me muestra los dos mensajes, Aprobo y excelente.
+	Esta mal, la comprovación en notas mayores de 9 me muestra los dos mensajes, Aprobo y excelente.
 	if (numeroRandom>8)
 	{
 		alert("Tu nota es "+numeroRandom+" ¡EXCELENTE!")
@@ -37,7 +55,8 @@ function mostrar()
 	if (numeroRandom>3)
 	{
 		alert("Tu nota es "+numeroRandom+" ¡APROBÓ!")
-	}if (numeroRandom<4)
+	}
+	if (numeroRandom<4)
 	{
 		alert("Tu nota es "+numeroRandom+" ¡Vamos, la proxima se puede!")
 	}
