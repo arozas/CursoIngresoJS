@@ -10,17 +10,50 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 var numeroSecreto; 
 var contadorIntentos;
 
+contadorIntentos=0
+
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
+	numeroSecreto=Math.random()*100+1;
+  numeroSecreto=parseInt(numeroSecreto);
 	 
-		//alert(numeroSecreto );
-	
-
+		//alert(numeroSecreto);
+    alert("Se genero el número")
 }
 
 function verificar()
 {
+	let numeroIngresado;
+  let mensaje;
+  let faltanNumeros;
+  let sobranNumeros;
+
+  numeroIngresado=document.getElementById('txtIdNumero').value;
+
+  numeroIngresado=parseInt(numeroIngresado);
+
+  contadorIntentos=contadorIntentos+1;
 	
-	
+  if (numeroIngresado==numeroSecreto)
+  {
+    
+    mensaje= "Usted es un ganador!!! y en solo "+contadorIntentos+" intentos";
+  }
+  else
+  {
+    if (numeroIngresado<numeroSecreto)
+    {
+      faltanNumeros=numeroSecreto-numeroIngresado;
+      mensaje= "Falta "+faltanNumeros+" números";
+    } 
+    else
+    {
+      if(numeroIngresado>numeroSecreto)
+      {
+        sobranNumeros=numeroIngresado-numeroSecreto;
+        mensaje ="Sé pasó por "+sobranNumeros+" números";
+      }
+    }
+  }
+  alert(mensaje);
 }

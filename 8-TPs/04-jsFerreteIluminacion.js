@@ -30,7 +30,7 @@ function CalcularPrecio ()
 
     cantidadLamparas=parseInt(cantidadLamparas);
 
-    precioBruto=cantidadLamparas*35;
+    precioBruto=cantidadLamparas*precioLamparas;
  	
     if(cantidadLamparas>5) //.A
     {
@@ -70,13 +70,16 @@ function CalcularPrecio ()
                    {
                        descuento=15;
                    }
-                   if(marcaLamparas=="FelipeLamparas")
-                   {
-                       descuento=10;
-                   }
                    else
                    {
-                       descuento=5;
+                       if(marcaLamparas=="FelipeLamparas")
+                        {
+                            descuento=10;
+                        }
+                        else    
+                        {
+                            descuento=5;
+                        }
                    }
                 }
             }
@@ -91,9 +94,8 @@ function CalcularPrecio ()
         precioFinal=precioConDescuento-ingresosBrutos;
         document.getElementById('txtIdprecioDescuento').value="Usted pago $"+precioFinal+" de IIBB.”, siendo $"+ingresosBrutos+" el impuesto que se pagó";
     }
-    else
-    {
-        precioFinal=precioConDescuento;
-        document.getElementById('txtIdprecioDescuento').value="Usted pago $"+precioFinal;
-    }
+
+
+    precioFinal=precioConDescuento;
+    document.getElementById('txtIdprecioDescuento').value="Usted pago $"+precioFinal;
 }
