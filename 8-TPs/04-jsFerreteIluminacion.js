@@ -1,7 +1,7 @@
 /*
 Alejandro Alberto Martín Rozas
 Div J
-TP 04 IF
+TP 04 Switch
 
 4.	Para el departamento de iluminación:
 Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
@@ -32,70 +32,63 @@ function CalcularPrecio ()
 
     precioBruto=cantidadLamparas*precioLamparas;
  	
-    if(cantidadLamparas>5) //.A
+    switch(cantidadLamparas)
     {
-        descuento=50;
-    }
-    else
-    {
-        if(cantidadLamparas>4) //B
-        {
-            if (marcaLamparas=="ArgentinaLuz")
+        case 5:
+            switch(marcaLamparas)
             {
-                descuento=40;
+                case "ArgentinaLuz":
+                    descuento=(precioBruto*-40)/100;
+                break;
+                default:
+                    descuento=(precioBruto*-30)/100;
+                break;
             }
-            else
+        break;
+        case 4:
+            switch(marcaLamparas)
             {
-                descuento=30;
+                case "ArgentinaLuz":
+                case "FelipeLamparas":
+                    descuento=(precioBruto*-25)/100;
+                break;
+                default:
+                    descuento=(precioBruto*-20)/100;
+                break;
             }
-        }
-        else
-        {
-            if(cantidadLamparas>3) //.C
+        break;
+        case 3:
+            switch(marcaLamparas)
             {
-                if (marcaLamparas=="ArgentinaLuz"|| marcaLamparas=="FelipeLamparas")
-                {
-                    descuento=25;
-                }
-                else
-                {
-                    descuento=20;
-                }
+                case "ArgentinaLuz":
+                    descuento=(precioBruto*-15)/100;
+                break;
+                case "FelipeLamparas":
+                    descuento=(precioBruto*-10)/100;
+                break;
+                default:
+                    descuento=(precioBruto*-5)/100;
+                break;
             }
-            else
-            {
-                if(cantidadLamparas>2)//.D
-                {
-                   if(marcaLamparas=="ArgentinaLuz")
-                   {
-                       descuento=15;
-                   }
-                   else
-                   {
-                       if(marcaLamparas=="FelipeLamparas")
-                        {
-                            descuento=10;
-                        }
-                        else    
-                        {
-                            descuento=5;
-                        }
-                   }
-                }
-            }
-        }
+        break;
+        case 2:
+        case 1:
+            descuento=0
+        break;
+        default:
+            descuento=(precioBruto*-6)/100;
+        break;
     }
 
-    precioConDescuento=precioBruto-(precioBruto*descuento)/100
+    precioConDescuento=precioBruto+descuento
+    precioFinal=precioConDescuento;
 
     if (precioConDescuento>120)
     {
         ingresosBrutos=(precioConDescuento*10)/100;
-        precioFinal=precioConDescuento-ingresosBrutos;
-        document.getElementById('txtIdprecioDescuento').value="Usted pago $"+precioFinal+" de IIBB.”, siendo $"+ingresosBrutos+" el impuesto que se pagó";
+        precioFinal=precioConDescuento+ingresosBrutos;
+        alert("Usted pago $"+ingresosBrutos.toFixed(2)+" de IIBB");
     }
 
-
-    precioFinal=precioConDescuento;
-    document.getElementById('txtIdprecioDescuento').value="Usted pago $"+precioFinal;
+    document.getElementById('txtIdprecioDescuento').value="Importe $"+precioFinal.toFixed(2);
 }

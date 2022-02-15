@@ -1,3 +1,9 @@
+/*Alejandro Alberto Martín Rozas
+Div J
+ejercicio IF01
+*/
+//operador de https://www.w3schools.com/js/js_operators.asp
+//Hardcodear cargar valores directamente dentro del código
 function mostrar()
 {
 	let edadIngresada;
@@ -14,7 +20,7 @@ function mostrar()
 
 	if (isNaN(edadIngresada))
 	{
-		alert("No ingreso un nmero");
+		alert("No ingreso un número");
 	}
 	else if (edadIngresada==15) // cuado se va indicar una condición igual usar dos iguales ==
 	{
