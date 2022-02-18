@@ -1,4 +1,6 @@
-/*
+/*Alejandro Alberto Martín Rozas
+Div J
+ejercicio While 07
 Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
 e informar la suma acumulada y el promedio.
 */
