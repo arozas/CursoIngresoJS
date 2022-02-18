@@ -13,17 +13,46 @@ hasta que el usuario quiera, mostrar:
 function mostrar()
 {
 	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
-	var sumaNegativos=0;
+	let respuesta;
+	let numeroIngresado;
+	let sumaNegativos;
+	let	contadorNegativos;
+	let sumaPositivos;
+	let contadorPositivos;
+	let	contadorCeros;
 
-	respuesta="si";
+	respuesta=true;
+	numeroIngresado=0;
+	sumaNegativos=0;
+	contadorNegativos=0;
+	sumaPositivos=0;
+	contadorPositivos=0;
+	contadorCeros=0;
 
-	while(respuesta=="si")
+	while(respuesta==true)
 	{
+		numeroIngresado=prompt("Ingrese un numero");
+		numeroIngresado=parseInt(numeroIngresado);
+		if(numeroIngresado>0)
+		{
+			contadorPositivos=contadorPositivos+1;
+			sumaPositivos=sumaPositivos+numeroIngresado;
+		}
+		if(numeroIngresado<0)
+		{
+			contadorNegativos=contadorNegativos+1;
+			sumaNegativos=sumaNegativos+numeroIngresado;
+		}
+		if(numeroIngresado==0)
+		{
+			contadorCeros=contadorCeros+1
+		}
+
 		
-		respuesta=prompt("desea continuar?");
+		respuesta=confirm("¿Desea continuar?");
 	}//fin del while
+
+	alert("cantidad de numeros positivos: "+contadorPositivos+" "+sumaPositivos);
 
 	document.write("la suma de negativos es :"+sumaNegativos);
 }//FIN DE LA FUNCIÓN

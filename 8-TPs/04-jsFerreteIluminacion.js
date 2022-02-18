@@ -76,7 +76,7 @@ function CalcularPrecio ()
             descuento=0
         break;
         default:
-            descuento=(precioBruto*-6)/100;
+            descuento=(precioBruto*-50)/100;
         break;
     }
 
