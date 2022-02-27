@@ -22,19 +22,22 @@ function mostrar()
 		numeroIngresado=prompt("Ingrese un numero");
 		numeroIngresado=parseInt(numeroIngresado);
 
-		while(banderaDelPrimero=="es el primero")
+		if(banderaDelPrimero=="es el primero")
 		{
 			numeroMaximo=numeroIngresado;
 			numeroMinimo=numeroIngresado;
 			banderaDelPrimero="es el segundo";
 		}
-		if(numeroIngresado>numeroMaximo)
+		else
 		{
-			numeroMaximo=numeroIngresado;
-		}
-		if(numeroIngresado<numeroMinimo) //Si uso la instrucción Else, no entra el minimo.
-		{
+			if(numeroIngresado>numeroMaximo)
+			{
+				numeroMaximo=numeroIngresado;
+			}
+			if(numeroIngresado<numeroMinimo) //Si uso la instrucción Else, no entra el minimo.
+			{
 			numeroMinimo=numeroIngresado;
+			}
 		}
 
 		respuesta=confirm("desea continuar?");

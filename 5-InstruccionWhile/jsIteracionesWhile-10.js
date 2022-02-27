@@ -35,45 +35,73 @@ function mostrar()
 	contadorPositivos=0;
 	contadorCeros=0;
 	contadorPares=0;
-	promedioNegativos=0;
-	promedioPositivos=0;
+	//promedioNegativos=0; no se declaran, variables de trabajo,
+	//promedioPositivos=0; //pero
 
 	while(respuesta==true)
 	{
 		numeroIngresado=prompt("Ingrese un numero");
 		numeroIngresado=parseInt(numeroIngresado);
-		if(numeroIngresado>0)
-		{
-			contadorPositivos=contadorPositivos+1;
-			sumaPositivos=sumaPositivos+numeroIngresado;
-		}
+
 		if(numeroIngresado<0)
 		{
 			contadorNegativos=contadorNegativos+1;
 			sumaNegativos=sumaNegativos+numeroIngresado;
 		}
-		if(numeroIngresado==0)
+		else 
 		{
-			contadorCeros=contadorCeros+1;
+			if(numeroIngresado>0)
+			{
+				contadorPositivos=contadorPositivos+1;
+				sumaPositivos=sumaPositivos+numeroIngresado;
+			}
+			else
+			{
+				if(numeroIngresado==0)
+				{
+					contadorCeros=contadorCeros+1;
+				}
+			}
 		}
+
 		if(numeroIngresado%2==0)
 		{
 			contadorPares=contadorPares+1;
 		}
 
 		respuesta=confirm("¿Desea continuar?");
+		
 	}//fin del while
+
+	//alert("cantidad de numeros positivos: "+contadorPositivos+" suma de los positivos: "+sumaPositivos+" cantidad de numero negativos: "+contadorNegativos+" suma de los numeros negativos: "+sumaNegativos+" cantidad de ceros ingresados: "+contadorCeros+" cantidad de numeros pares: "+contadorPares+" promedio de numero positivos: "+promedioPositivos+" promedio de numeros negativos: "+promedioNegativos+" diferencia entre positivos y negativos: "+diferenciaPositivosNegativos);
+
+	document.write("la suma de numeros negativos: "+sumaNegativos+"<br>");
+	document.write("la suma de numeros positivos: "+sumaPositivos+"<br>");
+	document.write("cantidad de numeros negativos: "+contadorNegativos+"<br>");
+	document.write("cantidad de numeros positivos: "+contadorPositivos+"<br>");
+	document.write("cantidad de numeros ceros: "+contadorCeros+"<br>");
+	document.write("cantidad de numeros pares: "+contadorPares+"<br>");
 	if(contadorPositivos>0)
 	{
 		promedioPositivos=sumaPositivos/contadorPositivos;
+		document.write("promedio de numeros positivos: "+promedioPositivos+"<br>");
+	}
+	else
+	{
+		document.write("no se ingresaron numeros positivos para promediar <br>");
 	}
 	if(contadorNegativos>0)
 	{
 		promedioNegativos=sumaNegativos/contadorNegativos;
+		document.write("promedio de numeros negativos: "+promedioNegativos+"<br>");
 	}
+	else
+	{
+		document.write("no se ingresaron numeros negativos para promediar <br>");
+	}
+
 	diferenciaPositivosNegativos= sumaPositivos+sumaNegativos;
 
-	//alert("cantidad de numeros positivos: "+contadorPositivos+" suma de los positivos: "+sumaPositivos+" cantidad de numero negativos: "+contadorNegativos+" suma de los numeros negativos: "+sumaNegativos+" cantidad de ceros ingresados: "+contadorCeros+" cantidad de numeros pares: "+contadorPares+" promedio de numero positivos: "+promedioPositivos+" promedio de numeros negativos: "+promedioNegativos+" diferencia entre positivos y negativos: "+diferenciaPositivosNegativos);
+	document.write("diferencia de numeros positivos y negativos: "+diferenciaPositivosNegativos+"<br>");
 
-	document.write("cantidad de numeros positivos: "+contadorPositivos+" suma de los positivos: "+sumaPositivos+" cantidad de numero negativos: "+contadorNegativos+" suma de los numeros negativos: "+sumaNegativos+" cantidad de ceros ingresados: "+contadorCeros+" cantidad de numeros pares: "+contadorPares+" promedio de numero positivos: "+promedioPositivos+" promedio de numeros negativos: "+promedioNegativos+" diferencia entre positivos y negativos: "+diferenciaPositivosNegativos);
 }//FIN DE LA FUNCIÓN
