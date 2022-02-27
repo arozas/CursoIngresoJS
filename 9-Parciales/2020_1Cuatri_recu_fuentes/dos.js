@@ -13,53 +13,121 @@ f) El tipo mas caro*/
 
 function mostrar()
 {
-  let productoIngresado;
-  let cantidadBolsas;
-  let precioBolsas;
-  let confirmacionCliente;
-  let acumuladorBolsas;
-  let acumuladorPrecio;
+  
+	let tipoProductoIngresado;
+	let precioIngresado;
+	let cantidadBolsasIngresada;
+  let confirmarVuelta;
   let precioBruto;
+  let acumuladorPrecioBruto;
+  let mensaje;
+  let acumuladorArena;
+  let acumuladorCal;
+  let acumuladorCemento;
+  let totalBosalCompradas;
+  let descuentoCompra;
+  let precioFinalDescuento;
+  let banderaMasCaro;
+  let PrimerPrecio;
+  let PrimerTipo;
+  let primerUnidadesCaro;
 
-  acumuladorBolsas=0;
-  acumuladorPrecio=0;
+  confirmarVuelta=true;
+  acumuladorPrecioBruto=0;
+  acumuladorArena=0;
+  acumuladorCal=0;
+  acumuladorCemento=0;
+  banderaMasCaro=true;
 
-  confirmacionCliente=true;
-  
-  while(confirmacionCliente==true)
+  while(confirmarVuelta==true)
   {
-    productoIngresado=prompt("Ingrese Producto");
-    productoIngresado=productoIngresado.toLowerCase();
-    while(productoIngresado!="arena"&&productoIngresado!="cal"&&productoIngresado!="cemento")
+    tipoProductoIngresado=prompt("Ingrese el tipo de producto:")
+		while(tipoProductoIngresado!="arena"&&tipoProductoIngresado!="cal"&&tipoProductoIngresado!="cemento")
+		{
+			tipoProductoIngresado=prompt("Error, reingrese el tipo de producto:")
+		}
+    cantidadBolsasIngresada=prompt("Ingrese la cantidad:");
+		cantidadBolsasIngresada=parseInt(cantidadBolsasIngresada);
+		while(isNaN(cantidadBolsasIngresada)||cantidadBolsasIngresada<1)
+		{
+			cantidadBolsasIngresada=prompt("Error, reingrese la cantidad:");
+			cantidadBolsasIngresada=parseInt(cantidadBolsasIngresada);
+		}
+		precioIngresado=prompt("Ingrese el precio:");
+		precioIngresado=parseFloat(precioIngresado);
+		while(isNaN(precioIngresado)||precioIngresado<1)
+		{
+			precioIngresado=prompt("Error, reingrese el precio:");
+			precioIngresado=parseFloat(precioIngresado);
+		}
+    switch(tipoProductoIngresado)
     {
-      productoIngresado=prompt("Error, ingrese arena, cal o cemento");
-      productoIngresado=productoIngresado.toLowerCase();
+      case "arena":
+        acumuladorArena=acumuladorArena+cantidadBolsasIngresada;
+      break;
+      case "cal":
+        acumuladorCal=acumuladorCal+cantidadBolsasIngresada;
+      break;
+      case "cemento":
+        acumuladorCemento=acumuladorCemento+cantidadBolsasIngresada;
+      break; 
     }
-    cantidadBolsas=prompt("Ingrese canitad de bolsas");
-    cantidadBolsas=parseInt(cantidadBolsas);
-    while(isNaN(cantidadBolsas)||cantidadBolsas<0)
+    if(banderaMasCaro==true)
     {
-      cantidadBolsas=prompt("Error, ingrese un una cantidad valida");
-      cantidadBolsas=parseInt(cantidadBolsas);
+      PrimerPrecio=precioIngresado;
+      PrimerTipo=tipoProductoIngresado;
+      primerUnidadesCaro=cantidadBolsasIngresada;
+      banderaMasCaro=false;
     }
-    precioBolsas=prompt("Ingrese precio");
-    precioBolsas=parseFloat(precioBolsas);
-    while(isNaN(precioBolsas) || precioBolsas<0)
+    else
     {
-      precioBolsas=prompt("Error, ingrese un precio valido");
-      precioBolsas=parseFloat(precioBolsas);
+      if(precioIngresado>PrimerPrecio)
+      {
+        PrimerPrecio=precioIngresado;
+        PrimerTipo=tipoProductoIngresado;
+        primerUnidadesCaro=cantidadBolsasIngresada;
+      }
     }
-    acumuladorBolsas=acumuladorBolsas+cantidadBolsas;
-    acumuladorPrecio=acumuladorPrecio+precioBolsas;
-    confirmacionCliente=confirm("¿desea continuar?")
+    precioBruto=cantidadBolsasIngresada*precioIngresado;
+    acumuladorPrecioBruto=acumuladorPrecioBruto+precioBruto;
+    confirmarVuelta=confirm("¿Desea continuar?");
 
+  }//fin del while
+  totalBosalCompradas=acumuladorArena+acumuladorCal+acumuladorCemento;
+  mensaje="El importe total bruto a pagar es: "+acumuladorPrecioBruto+"<br>";
+  if(totalBosalCompradas>10)
+  {
+    if(totalBosalCompradas>30)
+    {
+      descuentoCompra=precioBruto*25/100;
+      precioFinalDescuento=precioBruto-descuentoCompra;
+      mensaje=mensaje+"Se realizó un descuento del 25% el precio final es $"+precioFinalDescuento+"<br>";
+    }
+    else
+    {
+      descuentoCompra=precioBruto*15/100;
+      precioFinalDescuento=precioBruto-descuentoCompra;
+      mensaje=mensaje+"Se realizó un descuento del 15% el precio final es $"+precioFinalDescuento+"<br>";
+    }
+  }
 
-  
-  }//fin del While
-  precioBruto=acumuladorBolsas*acumuladorPrecio
-  alert(precioBruto);
-  // Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
-  // Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
-  // a) El importe total a pagar , bruto sin descuento y...
+  if(acumuladorArena>acumuladorArena&&acumuladorArena>acumuladorCemento)
+  {
+    mensaje=mensaje+"El tipo que más se compro es Arena, se compraron unidades "+acumuladorArena+"<br>";
+  }
+  else
+  {
+    if(acumuladorCal>acumuladorCemento)
+    {
+      mensaje=mensaje+"El tipo que más se compro es Cal, se compraron unidades "+acumuladorCal+"<br>";
+    }
+    else
+    {
+      mensaje=mensaje+"El tipo que más se compro es Cemento, se compraron unidades "+acumuladorCemento+"<br>";
+    }
+  }
+  mensaje=mensaje+"El tipo más caro es: "+PrimerTipo+"la bolsa cuesta: $"+PrimerPrecio+", y se compraron bolsas:"+primerUnidadesCaro;
+
+  document.write(mensaje);
 
 }// Fin de función
